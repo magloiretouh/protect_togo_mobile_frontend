@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/nav_map"
+            android:title="@string/menu_map" />
+        <item
+            android:id="@+id/nav_denounce"
+            android:icon="@drawable/nav_denounce"
+            android:title="@string/menu_denounce" />
+        <item
+            android:id="@+id/nav_violation_type"
+            android:icon="@drawable/nav_violation"
+            android:title="@string/menu_violation_type" />
+        <item
+            android:id="@+id/nav_opinion"
+            android:icon="@drawable/nav_opinion"
+            android:title="@string/menu_opinion" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/nav_about"
+            android:title="@string/menu_about" />
+
+    </group>
+</menu>

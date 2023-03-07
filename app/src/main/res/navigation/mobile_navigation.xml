@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_map">
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.agia.protecttogo.ui.map.MapFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/nav_denounce"
+        android:name="com.agia.protecttogo.ui.denounce.DenounceFragment"
+        android:label="@string/menu_denounce"
+        tools:layout="@layout/fragment_denounce" />
+
+    <fragment
+        android:id="@+id/nav_violation_type"
+        android:name="com.agia.protecttogo.ui.violation.ViolationFragment"
+        android:label="@string/menu_violation_type"
+        tools:layout="@layout/fragment_violation" />
+
+    <fragment
+        android:id="@+id/nav_opinion"
+        android:name="com.agia.protecttogo.ui.opinion.OpinionFragment"
+        android:label="@string/menu_opinion"
+        tools:layout="@layout/fragment_opinion" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.agia.protecttogo.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>
