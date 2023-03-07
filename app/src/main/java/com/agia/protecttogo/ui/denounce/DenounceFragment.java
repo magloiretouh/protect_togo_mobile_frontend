@@ -1,26 +1,33 @@
 package com.agia.protecttogo.ui.denounce;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.agia.protecttogo.R;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DenounceFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.agia.protecttogo.databinding.FragmentDenounceBinding;
+
 public class DenounceFragment extends Fragment {
 
+    private FragmentDenounceBinding binding;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_denounce, container, false);
+    public View onCreateView (LayoutInflater inflater,
+                              ViewGroup container,
+                              Bundle savedInstanceState) {
+        binding = FragmentDenounceBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

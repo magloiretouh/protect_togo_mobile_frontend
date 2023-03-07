@@ -1,26 +1,70 @@
 package com.agia.protecttogo.ui.map;
 
+import  com.agia.protecttogo.R;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.agia.protecttogo.R;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MapFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.agia.protecttogo.databinding.FragmentMapBinding;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 public class MapFragment extends Fragment {
 
+    private FragmentMapBinding binding;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false);
+    public View onCreateView (LayoutInflater inflater,
+                              ViewGroup container,
+                              Bundle savedInstanceState) {
+        binding = FragmentMapBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        
+        //Initialize Google Maps on the Fragment Map
+        SupportMapFragment supportMapFragment = (SupportMapFragment)
+                getChildFragmentManager().findFragmentById(R.id.map);
+
+        //Listen to Map events
+        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(@NonNull GoogleMap googleMap) {
+                //When the map is ready
+                googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(@NonNull LatLng latLng) {
+                        // When the user click on the map
+                        // Initialize Marker options
+                        MarkerOptions markerOptions = new MarkerOptions();
+                        // Set Marker Position
+                        markerOptions.position(latLng);
+                        // Set Title of the Marker
+                        markerOptions.title(latLng.latitude + " : " + latLng.longitude);
+                        // Remove al marker
+                        googleMap.clear();
+                        // Animate the zoom to the marker
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                        // Add the marker on the map
+                        googleMap.addMarker(markerOptions);
+                    }
+                });
+            }
+        });
+        return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

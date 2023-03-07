@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.opinion.OpinionFragment">
+    tools:context=".ui.opinion.OpinionFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opinion_header"
+        android:textColor="@color/topbar_color"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="30dp"/>
 
-</FrameLayout>
+    <RadioGroup
+        android:id="@+id/opinion_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp">
+        <RadioButton
+            android:id="@+id/opinion_type_doubt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/opinion_doubt"/>
+        <RadioButton
+            android:id="@+id/opinion_type_suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/opinion_suggestion"/>
+        <RadioButton
+            android:id="@+id/opinion_type_critics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-180dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/opinion_critics"/>
+        <RadioButton
+            android:id="@+id/opinion_type_compliment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/opinion_compliments"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/opinion_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:maxLength="70"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Name"/>
+
+    <EditText
+        android:id="@+id/opinion_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textEmailAddress"
+        android:maxLength="70"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/opinion_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Message"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/opinion_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/topbar_color"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="submitbuttonHandler"
+        android:text="Send" />
+</LinearLayout>
