@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Protect Togo</string>
-    <string name="app_about">The Protect Brazil is an initiative of UNICEF and the Human Rights Secretariat of the Ministry of Justice and Citizenship. The application was launched in 2013 as a result of the convergence agenda, a coordinating body that brings together various organizations focused on promoting the rights of children and adolescents during mega events. \n\nThe creation of the application was an initiative of UNICEF, Ilhasoft, Cedeca-BA and ABMP with the accession of the federal government afterwards. In 2016, a new version was released, expanding the functionality and making integration with Disque 100, the main complaint channel of human rights violations in the country. </string>
+    <string name="app_about">tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec \n\nipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio morbi quis commodo odio aenean sed adipiscing diam </string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -8,19 +8,28 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_map">Map</string>
-    <string name="menu_denounce">Denounce</string>
-    <string name="menu_violation_type">Violation types</string>
-    <string name="menu_opinion">Give your opinion</string>
-    <string name="menu_about">About</string>
+    <string name="menu_map">Carte</string>
+    <string name="menu_denounce">Denoncer</string>
+    <string name="menu_violation_type">Types de Violences</string>
+    <string name="menu_opinion">Votre Opinion</string>
+    <string name="menu_about">A Propos</string>
 
-    <string name="opinion_header">Doubts or suggestions ? \nSend to us</string>
-    <string name="opinion_doubt">Doubt</string>
+    <string name="opinion_header">Doutes ou Suggestions ? \nEnvoyez Les</string>
+    <string name="opinion_doubt">Doutes</string>
     <string name="opinion_suggestion">Suggestions</string>
-    <string name="opinion_critics">Critics</string>
-    <string name="opinion_compliments">Compliment</string>
+    <string name="opinion_critics">Critiques</string>
+    <string name="opinion_compliments">Compliments</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_denounce_form">DenounceForm</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

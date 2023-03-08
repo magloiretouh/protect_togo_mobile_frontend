@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_map" />
 
     <fragment
-        android:id="@+id/nav_denounce"
+        android:id="@+id/frag_denounce"
         android:name="com.agia.protecttogo.ui.denounce.DenounceFragment"
         android:label="@string/menu_denounce"
         tools:layout="@layout/fragment_denounce" />

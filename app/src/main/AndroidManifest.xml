@@ -8,13 +8,30 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/unicef_logo"
+        android:icon="@mipmap/unicef_logo_white_back"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/unicef_logo_round"
+        android:roundIcon="@mipmap/unicef_logo_white_back_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProtectTogo"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.DenounceActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ProtectTogo.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+<!--        <activity-->
+<!--            android:name=".DenounceForm"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_denounce_form"-->
+<!--            android:theme="@style/Theme.ProtectTogo.NoActionBar">-->
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+<!--        </activity>-->
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

@@ -60,7 +60,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        android:hint="Name"/>
+        android:hint="Nom &amp; Prénoms"/>
 
     <EditText
         android:id="@+id/opinion_email"
