@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        // Lauch Denounce Icon and set Item as checked
+        // Launch Denounce Icon and set Item as checked
         navigationView.getMenu().findItem(R.id.nav_denounce).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem item) {
