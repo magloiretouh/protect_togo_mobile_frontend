@@ -19,8 +19,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -32,12 +35,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.agia.protecttogo.databinding.ActivityMainBinding;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    FloatingActionButton denounce, denounce_call, denounce_form;
-    boolean status_btns = true;
+    String [] permission = {Manifest.permission.CALL_PHONE};
+    int requestCode = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,49 +51,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // set floating buttons
-        denounce = findViewById(R.id.denounce_float_btn);
-        denounce_call = findViewById(R.id.denounce_call);
-        denounce_form = findViewById(R.id.denounce_form);
-
-        // add listener to denounce button
-        denounce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(status_btns) {
-                    denounce_call.show();
-                    denounce_form.show();
-                    status_btns = false;
-                } else {
-                    denounce_call.hide();
-                    denounce_form.hide();
-                    status_btns = true;
-                }
-            }
-        });
-
-        // add listener to call button
-        denounce_call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:1011"));
-
-                if (ActivityCompat.checkSelfPermission(MainActivity.this,
-                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                startActivity(callIntent);
-            }
-        });
-
-        // add listener to form button
-        denounce_form.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, DenounceActivity.class));
-            }
-        });
+        ActivityCompat.requestPermissions(MainActivity.this, permission, requestCode);
 
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
@@ -108,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem item) {
                 drawer.closeDrawer(GravityCompat.START);
-                if (status_btns) {
+                if (findViewById(R.id.denounce_call).getVisibility() == View.GONE) {
                     findViewById(R.id.denounce_float_btn).performClick();
                 }
                 return true;

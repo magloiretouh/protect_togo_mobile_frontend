@@ -35,7 +35,6 @@ public class OpinionFragment extends Fragment {
                         .setAction("Action", null).show();
             }
         });
-
         return view;
     }
 
