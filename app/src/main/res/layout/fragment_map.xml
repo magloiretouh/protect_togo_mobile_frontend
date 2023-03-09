@@ -20,7 +20,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@drawable/megaphone_white"
+        app:srcCompat="@drawable/nav_denounce"
         android:backgroundTint="@android:color/holo_red_dark"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
