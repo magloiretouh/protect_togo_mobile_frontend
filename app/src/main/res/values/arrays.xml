@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="occupations">
+        <item>---Occupation du Denonceur---</item>
+        <item>Secteurs social (santé, action social, education)</item>
+        <item>Elève - étudiant – employé - domestique</item>
+        <item>Commerce</item>
+        <item>Securite et justice</item>
+        <item>Secteur prive</item>
+        <item>Société civil</item>
+        <item>Sans occupation</item>
+        <item>Autres</item>
+    </string-array>
+
+    <string-array name="liens">
+        <item>---Lien Appelant-Victime---</item>
+        <item>Parents/ famille</item>
+        <item>Enseignant</item>
+        <item>Educateur</item>
+        <item>Amie</item>
+        <item>voisin</item>
+        <item>Autres</item>
+    </string-array>
+
+    <string-array name="types_handicap">
+        <item>---Type d\'handicap---</item>
+        <item>Physique</item>
+        <item>Visuel</item>
+        <item>Auditive</item>
+        <item>Mental</item>
+        <item>Autres</item>
+    </string-array>
+
+    <string-array name="types_violence">
+        <item>---Type de Violences---</item>
+        <item>Violence Physique (agressions)</item>
+        <item>Violence sexuelle (Viol …  Produire des images pornographiques … harcèlement /des avances sexuelles)</item>
+        <item>Insultes /menaces</item>
+        <item>Exploitation du travail</item>
+        <item>Abandon</item>
+        <item>Traite</item>
+        <item>Fugue</item>
+        <item>Autres</item>
+    </string-array>
+
+    <string-array name="raisons_violence">
+        <item>---Raison de la Violence---</item>
+        <item>Identité sexuelle</item>
+        <item>Genre</item>
+        <item>Comportement</item>
+        <item>Autres</item>
+        <item>Je ne sais pas</item>
+    </string-array>
+
+    <string-array name="danger_types">
+        <item>---Types de Danger---</item>
+        <item>Physique</item>
+        <item>Psycho mental</item>
+        <item>Je ne sais pas</item>
+    </string-array>
+
+    <string-array name="violence_lieu_options">
+        <item>---Lieu de la Violence---</item>
+        <item>Maison de Parents/ famille</item>
+        <item>Maison des amies</item>
+        <item>Maison des amies</item>
+        <item>Ecole (Nom de l’établissement scolaire)</item>
+        <item>Centre d\'accueil</item>
+        <item>Famille d\'accueil</item>
+        <item>Brigade ou quartier pour mineurs</item>
+        <item>Poste de police/gendarmerie</item>
+        <item>Autre</item>
+    </string-array>
+
+    <string-array name="violence_auteur_options">
+        <item>---Auteur de la Violence---</item>
+        <item>Parents/Famille</item>
+        <item>Frère /sœur</item>
+        <item>Beau-père/ belle-mère</item>
+        <item>Le/la petit ami (de la mère/ du père)</item>
+        <item>Enseignant</item>
+        <item>Educateur</item>
+        <item>Amie</item>
+        <item>Voisin</item>
+        <item>Police/gendarme/militaire</item>
+        <item>Magistrate/juge</item>
+        <item>Travailleur de l’action humanitaire/ Nations Unies/ONGs</item>
+        <item>Autres</item>
+    </string-array>
+
+    <string-array name="temoins_options">
+        <item>---Y\'a t-il des temoins---</item>
+        <item>Oui</item>
+        <item>Non</item>
+        <item>Je ne sais pas</item>
+    </string-array>
+</resources>

@@ -79,7 +79,7 @@ public class OpinionFragment extends Fragment {
 
                 final String mRequestBody = jsonBody.toString();
 
-                String url = "http://192.168.226.94:5000/opinions";
+                String url = getResources().getString(R.string.api_url)+"/opinions";
                 // Request a string response from the provided URL.
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

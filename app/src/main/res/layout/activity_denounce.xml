@@ -1,239 +1,433 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.DenounceActivity"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_on_primary">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/denounce_toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/Theme.ProtectTogo.NoActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/denounce_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/Theme.ProtectTogo.NoActionBar"/>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <!-- Détails du signaleur -->
+        <TextView
+            android:text="Détails du Signaleur"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:textColor="@color/topbar_color"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+        <!-- Nom et prénoms -->
+        <EditText
+            android:id="@+id/nom_prenom_edittext"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nom &amp; Prénoms" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                tools:layout_editor_absoluteX="17dp"
-                tools:layout_editor_absoluteY="32dp" />
+        <!-- Age -->
+        <EditText
+            android:id="@+id/age_edittext"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Age"/>
 
-            <RadioGroup
-                android:layout_width="wrap_content"
+        <!-- Occupation -->
+        <Spinner
+            android:id="@+id/occupation_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:entries="@array/occupations"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Lien Appelant-Victime -->
+<!--            <TextView-->
+<!--                android:text="Lien Appelant-Victime"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+        <Spinner
+            android:id="@+id/lien_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:entries="@array/liens"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Détails Victime -->
+        <TextView
+            android:text="Détails Victime"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/topbar_color"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp" />
+
+        <!-- Nom et prénoms de la victime -->
+        <EditText
+            android:id="@+id/victime_nom_prenom_edittext"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nom &amp; Prénoms"/>
+
+        <!-- Age de la victime -->
+<!--            <TextView-->
+<!--                android:text="Age"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+        <EditText
+            android:id="@+id/victime_age_edittext"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Age" />
+
+        <!-- Nom du père -->
+        <EditText
+            android:id="@+id/nom_pere_edittext"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nom &amp; Prénoms Du Père"/>
+
+        <!-- Nom de la mère -->
+<!--            <TextView-->
+<!--                android:text="Nom de la mère"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+        <EditText
+            android:id="@+id/nom_mere_edittext"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nom &amp; Prénoms De la Mère"/>
+
+        <!-- Lieu de résidence -->
+        <EditText
+            android:id="@+id/residence_edittext"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="70"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Résidence Enfant"/>
+
+        <!-- Handicap -->
+        <TextView
+            android:text="L'enfant a-t-il un handicap ?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+
+        <RadioGroup
+            android:id="@+id/handicap_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/handicap_oui_radiobutton"
+                android:text="Oui"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="34dp"
-                tools:layout_editor_absoluteY="96dp" />
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black" />
+            <RadioButton
+                android:id="@+id/handicap_non_radiobutton"
+                android:text="Non"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black" />
+            <RadioButton
+                android:id="@+id/handicap_inconnu_radiobutton"
+                android:text="Inconnu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <!-- Type d'handicap -->
+        <Spinner
+            android:id="@+id/type_handicap_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:entries="@array/types_handicap"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone" />
+
+        <!-- Détails Violence -->
+        <!-- Détails du signaleur -->
+        <TextView
+            android:text="Détails de la Violence"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/topbar_color"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp" />
+
+        <!-- Type de violence -->
+        <Spinner
+            android:id="@+id/type_violence_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/types_violence" />
+
+        <!-- Raison de la violence -->
+        <Spinner
+            android:id="@+id/raison_violence_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/raisons_violence" />
+
+        <!-- L'enfant est-il en danger -->
+        <TextView
+            android:text="L'enfant est-il en danger ?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+        <RadioGroup
+            android:id="@+id/enfant_en_danger_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/enfant_en_danger_oui_radio"
+                android:text="Oui"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="RadioButton"
-                tools:layout_editor_absoluteX="95dp"
-                tools:layout_editor_absoluteY="97dp" />
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
+                android:id="@+id/enfant_en_danger_non_radio"
+                android:text="Non"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="RadioButton"
-                tools:layout_editor_absoluteX="235dp"
-                tools:layout_editor_absoluteY="97dp" />
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <!-- Type de danger -->
+
+        <Spinner
+            android:id="@+id/danger_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/danger_types"
+            android:prompt="@string/spinner_text" />
+
+        <!-- Lieu de la violence -->
+        <Spinner
+            android:id="@+id/violence_lieu_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/violence_lieu_options"
+            android:prompt="@string/spinner_text" />
+
+        <!-- Auteur de la violence -->
+        <Spinner
+            android:id="@+id/violence_auteur_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/violence_auteur_options"
+            android:prompt="@string/spinner_text" />
+
+        <!-- Y'a-t-il des témoins ? -->
+
+        <Spinner
+            android:id="@+id/temoins_spinner"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/temoins_options"
+            android:prompt="@string/spinner_text" />
+
+        <!-- Actuellement l'enfant est-il séparé d'un adulte/tuteur/surveillant ? -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Actuellement l'enfant est-il séparé d'un adulte/tuteur/surveillant ?" />
+
+        <RadioGroup
+            android:id="@+id/sep_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
+                android:id="@+id/sep_oui_radio"
+                android:text="Oui"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="RadioButton"
-                tools:layout_editor_absoluteX="235dp"
-                tools:layout_editor_absoluteY="164dp" />
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="wrap_content"
+                android:id="@+id/sep_non_radio"
+                android:text="Non"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="RadioButton"
-                tools:layout_editor_absoluteX="95dp"
-                tools:layout_editor_absoluteY="164dp" />
+                android:layout_weight="1"
+                android:buttonTint="@color/topbar_color"
+                android:checked="true"
+                android:textColor="@color/black"  />
+        </RadioGroup>
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="409dp"
+        <!-- Autres détails sur la violence -->
+
+        <EditText
+            android:id="@+id/edit_text_violence_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entrez les détails supplémentaires ici"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="251dp" />
+                android:layout_weight="1"
+                android:text="Annuler"
+                android:textColor="@android:color/black"
+                android:backgroundTint="@color/gray_btn_bg_color"/>
 
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="409dp"
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="289dp" />
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="Envoyer"
+                android:textColor="@android:color/white"
+                android:background="@color/topbar_color"/>
 
-            <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="331dp" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                tools:layout_editor_absoluteX="204dp"
-                tools:layout_editor_absoluteY="383dp" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                tools:layout_editor_absoluteX="-6dp"
-                tools:layout_editor_absoluteY="397dp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="26dp"
-                tools:layout_editor_absoluteY="447dp" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="26dp"
-                tools:layout_editor_absoluteY="474dp" />
-
-            <Spinner
-                android:id="@+id/spinner3"
-                android:layout_width="325dp"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="480dp" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="99dp"
-                tools:layout_editor_absoluteY="518dp" />
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
-
-            <RadioButton
-                android:id="@+id/radioButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Spinner
-                android:id="@+id/spinner4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Spinner
-                android:id="@+id/spinner5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Spinner
-                android:id="@+id/spinner6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/radioButton7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
-
-            <RadioButton
-                android:id="@+id/radioButton8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </ScrollView>
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar_denounce"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        android:background="?attr/colorPrimary"-->
-
-<!--        android:titleTextColor="#FFFF"-->
-<!--        app:layout_scrollFlags="scroll|enterAlways"-->
-<!--        tools:ignore="UnusedAttribute">-->
-<!--    </androidx.appcompat.widget.Toolbar>-->
+        </LinearLayout>
 
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
+</ScrollView>
